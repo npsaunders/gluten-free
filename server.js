@@ -1,50 +1,32 @@
 // DEPENDENCIES --------------
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
 require('dotenv').config();
+const recipesController = require('./controllers/recipes.js');
+const methodOverride = require('method-override');
 
-// DATABASE ------------------
+// // Database Configuration ------------------
+// mongoose.connect(process.env.DATABASE_URL);
+
+// // Database Connection Error / Success ---------------------
+// const db = mongoose.connection;
+// db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
+// db.on('connected', () => console.log('mongo connected'));
+// db.on('disconnected', () => console.log('mongo disconnected'));
+
+
 
 // MIDDLEWARE ----------------
+app.use(express.urlencoded({ extended: true }));
+app.use('/recipes', recipesController);
+
+
 
 // ROUTES --------------------
-// INDEX
+// INDEX to main landing page 
 app.get('/', (req, res) => {
-  res.redirect('/glutenFreeRecipes');
-});
-
-app.get('/glutenFreeRecipes', (req, res) => {
-  res.send('index route');
-});
-
-// NEW
-app.get('/glutenFreeRecipes/new', (req, res) => {
-  res.send('new route');
-});
-
-// DELETE
-app.delete('/glutenFreeRecipes/:id', (req, res) => {
-  res.send('delete route');
-});
-
-// UPDATE
-app.put('/glutenFreeRecipes/:id', (req, res) => {
-  res.send('update route');
-});
-
-// CREATE
-app.post('/glutenFreeRecipes', (req, res) => {
-  res.send('create route');
-});
-
-// EDIT
-app.get('/glutenFreeRecipes/:id/edit', (req, res) => {
-  res.send('edit route');
-});
-
-// SHOW
-app.get('/glutenFreeRecipes/:id', (req, res) => {
-  res.send('show route');
+  res.render('index.ejs');
 });
 
 
