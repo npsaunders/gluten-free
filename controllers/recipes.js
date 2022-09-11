@@ -6,8 +6,11 @@ const Recipe = require('../models/recipes.js');
 // ROUTES --------------------
 // INDEX - Display all recipes; apply filter, do search, etc from this page
 recipeRoute.get('/', (req, res) => {
-  res.render("recipes/index.ejs")
-  // res.render('recipes/index.ejs');
+  Recipe.find({}, (error, foundRecipes) => {
+    res.render("recipes/index.ejs", {
+      recipes: foundRecipes
+    });
+  });
 });
 
 // NEW - New Recipe Page
@@ -39,8 +42,12 @@ recipeRoute.get('/:id/edit', (req, res) => {
 });
 
 // SHOW - Show a recipe
-recipeRoute.get('/recipes/:id', (req, res) => {
-  res.send('show route');
+recipeRoute.get('/:id', (req, res) => {
+  Recipe.findById(req.params.id, (err, foundRecipe) => {
+    res.render('recipes/show.ejs', {
+      recipe: foundRecipe
+    });
+  });
 });
 
 module.exports = recipeRoute;

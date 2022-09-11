@@ -10,6 +10,15 @@
 
   <a href="/recipes/new/">new recipe</a>
 
+  <ul>
+    <%for (let i=0; i < recipes.length; i++) {%>
+      <li>
+        <a href="/recipes/<%=recipes[i]._id%>">
+          <%=recipes[i].name%>
+        </a>
+      </li>
+      <%}%>
+  </ul>
 
 </body>
 
