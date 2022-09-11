@@ -20,7 +20,9 @@ recipeRoute.get('/new', (req, res) => {
 
 // DELETE - Delete a recipe you have submitted
 recipeRoute.delete('/:id', (req, res) => {
-  res.send('delete route');
+  Recipe.findByIdAndDelete(req.params.id, () => {
+    res.redirect('/recipes');
+  });
 });
 
 // UPDATE - Update a recipe you have submitted and edited
