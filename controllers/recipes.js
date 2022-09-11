@@ -25,7 +25,12 @@ recipeRoute.delete('/:id', (req, res) => {
 
 // UPDATE - Update a recipe you have submitted and edited
 recipeRoute.put('/:id', (req, res) => {
-  res.send('update route');
+  Recipe.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  },
+    (error, updatedRecipe) => {
+      res.redirect(`/recipes/${req.params.id}`);
+    });
 });
 
 // CREATE - Create a recipe you have submitted through the New page
@@ -38,7 +43,11 @@ recipeRoute.post('/', (req, res) => {
 
 // EDIT - Edit a recipe you have submitted
 recipeRoute.get('/:id/edit', (req, res) => {
-  res.send('edit route');
+  Recipe.findById(req.params.id, (err, foundRecipe) => {
+    res.render('recipes/edit.ejs', {
+      recipe: foundRecipe
+    });
+  });
 });
 
 // SHOW - Show a recipe

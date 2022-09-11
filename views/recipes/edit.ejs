@@ -6,10 +6,18 @@
 </head>
 
 <body>
-  <h1>Gluten Free Recipes - Edit Recipe</h1>
+  <h1>Gluten Free Recipes - Edit <%= recipe.name %>
+  </h1>
 
   <a href="/recipes">back</a>
 
+  <h1>Gluten Free Recipes - Edit Recipe</h1>
+
+  <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+    <input type="text" name="name" value="<%=recipe.name%>" />
+    <input type="submit" value="Update Recipe" />
+  </form>
+  <a href="/recipes">back</a>
 
 </body>
 

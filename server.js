@@ -1,10 +1,10 @@
 // DEPENDENCIES --------------
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
 require('dotenv').config();
-const recipesController = require('./controllers/recipes.js');
+const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const recipesController = require('./controllers/recipes.js');
 
 // Database Configuration ------------------
 mongoose.connect(process.env.DATABASE_URL);
@@ -19,8 +19,8 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 // MIDDLEWARE ----------------
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 app.use('/recipes', recipesController);
-
 
 
 // ROUTES --------------------
