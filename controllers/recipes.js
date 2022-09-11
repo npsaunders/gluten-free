@@ -1,44 +1,45 @@
 const express = require('express');
 const recipeRoute = express.Router();
-
-
+const Recipe = require('../models/recipes.js');
 
 
 // ROUTES --------------------
 // INDEX - Display all recipes; apply filter, do search, etc from this page
 recipeRoute.get('/', (req, res) => {
-  res.send("recipe index route")
+  res.render("recipes/index.ejs")
   // res.render('recipes/index.ejs');
 });
 
 // NEW - New Recipe Page
-recipeRoute.get('/glutenFreeRecipes/new', (req, res) => {
-  res.send('new route');
+recipeRoute.get('/new', (req, res) => {
+  res.render('recipes/new.ejs');
 });
 
 // DELETE - Delete a recipe you have submitted
-recipeRoute.delete('/glutenFreeRecipes/:id', (req, res) => {
+recipeRoute.delete('/:id', (req, res) => {
   res.send('delete route');
 });
 
 // UPDATE - Update a recipe you have submitted and edited
-recipeRoute.put('/glutenFreeRecipes/:id', (req, res) => {
+recipeRoute.put('/:id', (req, res) => {
   res.send('update route');
 });
 
 // CREATE - Create a recipe you have submitted through the New page
 
-recipeRoute.post('/glutenFreeRecipes', (req, res) => {
-  res.send('create route');
+recipeRoute.post('/', (req, res) => {
+  Recipe.create(req.body, (error, createdRecipe) => {
+    res.redirect('/recipes');
+  });
 });
 
 // EDIT - Edit a recipe you have submitted
-recipeRoute.get('/glutenFreeRecipes/:id/edit', (req, res) => {
+recipeRoute.get('/:id/edit', (req, res) => {
   res.send('edit route');
 });
 
 // SHOW - Show a recipe
-recipeRoute.get('/glutenFreeRecipes/:id', (req, res) => {
+recipeRoute.get('/recipes/:id', (req, res) => {
   res.send('show route');
 });
 
