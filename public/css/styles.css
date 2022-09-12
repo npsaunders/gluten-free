@@ -10,37 +10,37 @@ body {
 }
 
 video {
-  object-fit: scale-fill;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  object-fit: cover;
+  height: 45vw;
   width: 100vw;
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
-.mainIndexHeader {
-  margin-top: 10px;
+#mainIndexHeader {
   display: flex;
-  height: 75px;
-  align-items: center;
+  height: 60px;
+  margin-right: 100px;
 }
 
 .mainIndexLi {
-  flex-direction: row;
-  margin-left: 35px;
+  margin: 0 25px;
   font-weight: 600;
+  color: #039be5;
+  height: 20px;
 }
 
 .gfLogo {
-  flex-direction: row;
-  justify-content: flex-start;
-  height: 75px;
-  width: 75px;
+  height: 50px;
+  width: 50px;
+  margin: 5px auto 0 10px;
 }
 
 nav {
   background-color: white;
+  margin-bottom: 10px;
 }
 
-nav a {
-  color: #039be5;
+.li {
+  margin-top: 35px;
 }
