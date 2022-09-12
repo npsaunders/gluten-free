@@ -19,6 +19,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 // MIDDLEWARE ----------------
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use('/recipes', recipesController);
 
