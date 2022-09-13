@@ -44,3 +44,28 @@ nav {
 .li {
   margin-top: 35px;
 }
+
+/* Recipe Index Page */
+
+.allRecipes {
+  display: flex;
+}
+
+.showRecipes {
+  border: 4px solid #91c54c;
+  border-radius: 10px;
+  height: 200px;
+  width: 400px;
+  color: #039be5;
+}
+
+button {
+  justify-content: center;
+}
+
+.buttonText {
+  color: white;
+  font-weight: 700;
+}
+
+/* Show Page */

@@ -14,28 +14,32 @@
       <a class="mainIndexLi" href="/recipes/new">Add a Recipe</a>
     </div>
     <div class="li">
-      <a class="mainIndexLi" href="/recipes/edit">Edit Your Recipe</a>
+      <a class="mainIndexLi" href="/recipes/:id/edit">Edit Your Recipe</a>
     </div>
     <div class="li">
       <a class="mainIndexLi" href="/recipes/">Log Out</a>
     </div>
   </div>
-
   <ul>
     <%for (let i=0; i < recipes.length; i++) {%>
-      <li>
-        <a href="/recipes/<%=recipes[i]._id%>">
-          <%=recipes[i].name%>
-            <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
-              <!-- edit -->
-              <a href="/recipes/<%= recipes[i]._id %>/edit">Edit</a>
-              <input type="submit" value="Delete Recipe" />
-            </form>
-        </a>
-      </li>
-      <%}%>
+      <div class="allRecipes">
+        <div class="showRecipes">
+          <li>
+            <a href="/recipes/<%=recipes[i]._id%>">
+              <%=recipes[i].name%>
+                <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
+                  <!-- edit -->
+                  <button class="waves-effect waves-light btn-small"><a class="buttonText"
+                      href="/recipes/<%= recipes[i]._id %>/edit">Edit</a></button>
+                  <!-- Delete -->
+                  <button class="waves-effect waves-light btn-small buttonText" type="submit">Delete</button>
+                </form>
+            </a>
+          </li>
+        </div>
+        <%}%>
   </ul>
-
+  </div>
 </body>
 
 </html>

@@ -6,13 +6,24 @@
 </head>
 
 <body>
-  <h1>Glute Free Recipes - Show Recipe</h1>
+  <div class="Header">
+    <div class="gfLogo">
+      <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg" /></a>
+    </div>
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/new">Add a Recipe</a>
+    </div>
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/<%= recipe._id %>/edit">Edit Your Recipe</a>
+    </div>
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/">Log Out</a>
+    </div>
+  </div>
 
-  <a href="/recipes/new/">new recipe</a>
-
-  <h1>
+  <h4>
     <%= recipe.name %>
-  </h1>
+  </h4>
   <textarea>
     <%= recipe.instructions %>
   </textarea>
