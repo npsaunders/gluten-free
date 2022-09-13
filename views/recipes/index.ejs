@@ -6,9 +6,20 @@
 </head>
 
 <body>
-  <h1>Glute Free Recipes - Search</h1>
-
-  <a href="/recipes/new/">new recipe</a>
+  <div class="Header">
+    <div class="gfLogo">
+      <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg" /></a>
+    </div>
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/new">Add a Recipe</a>
+    </div>
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/edit">Edit Your Recipe</a>
+    </div>
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/">Log Out</a>
+    </div>
+  </div>
 
   <ul>
     <%for (let i=0; i < recipes.length; i++) {%>

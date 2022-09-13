@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 video {
@@ -17,7 +17,7 @@ video {
   margin-top: 10px;
 }
 
-#mainIndexHeader {
+.Header {
   display: flex;
   height: 60px;
   width: 90vw;
