@@ -20,7 +20,7 @@ video {
 #mainIndexHeader {
   display: flex;
   height: 60px;
-  margin-right: 100px;
+  width: 90vw;
 }
 
 .mainIndexLi {
