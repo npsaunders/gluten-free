@@ -57,15 +57,27 @@ nav {
   height: 300px;
   width: 208px;
   color: #039be5;
+  display: flex;
 }
 
-button {
+/* button {
+  padding: 5px;
   justify-content: center;
-}
+} */
 
 .buttonText {
   color: white;
   font-weight: 700;
+}
+
+.idxRecipeName {
+  text-align: center;
+  font-weight: 700;
+}
+
+.idxRecipeEditDel {
+  /* margin-top: 13px; */
+  margin: 13px;
 }
 
 /* Show Page */
