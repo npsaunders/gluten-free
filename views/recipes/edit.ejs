@@ -27,6 +27,10 @@
 
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
     <input type="text" name="name" value="<%=recipe.name%>" />
+    Upload image from hard drive: <input type="file" name="imgPath" placeholder="image hard drive path"
+      accept="image/*" /><br /> or
+    <br />
+    URL: <input type="url" name="imgPath" placeholder="image URL" />
     <textarea name="instructions">
       <%= recipe.instructions %>
     </textarea>

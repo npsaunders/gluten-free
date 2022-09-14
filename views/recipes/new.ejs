@@ -22,6 +22,9 @@
 
   <form action="/recipes" method="POST">
     <input type="text" name="name" id="recName" placeholder="Recipe Name" />
+    Upload image from hard drive: <input type="file" name="imagePath" placeholder="image hard drive path" /><br /> or
+    <br />
+    URL: <input type="url" name="urlPath" placeholder="image URL" />
     <textarea name="instructions">
       Enter your recipe information. You can also drag and drop images.
     </textarea>
@@ -34,7 +37,8 @@
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name',
         width: 900,
-        height: 1800
+        height: 1800,
+        max_image_dimension: 50
       });
     </script>
 

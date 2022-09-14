@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <%- include('../partials/head.ejs')%>
+  <%- include('../partials/head.ejs') %>
 </head>
 
 <body>
@@ -23,15 +23,20 @@
       <div class="allRecipes">
         <div class="showRecipes">
           <li>
-            <a href="/recipes/<%=recipes[i]._id%>">
-              <%=recipes[i].name%>
-                <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
-                  <!-- edit -->
-                  <button class="waves-effect waves-light btn-small"><a class="buttonText"
-                      href="/recipes/<%= recipes[i]._id %>/edit">Edit</a></button>
-                  <!-- Delete -->
-                  <button class="waves-effect waves-light btn-small buttonText" type="submit">Delete</button>
-                </form>
+            <a href="/recipes/<%= recipes[i]._id %>">
+              <%= recipes[i].name %>
+                <% if(recipes[i].urlPath) {%>
+                  <img src=<%=recipes[i].urlPath %> width="200" height="200">
+                  <%} else {%>
+                    <img src="/imgs/nofood.png" width="200" height="200">
+                    <% } %>
+                      <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
+                        <!-- edit -->
+                        <button class="waves-effect waves-light btn-small"><a class="buttonText"
+                            href="/recipes/<%= recipes[i]._id %>/edit">Edit</a></button>
+                        <!-- Delete -->
+                        <button class="waves-effect waves-light btn-small buttonText" type="submit">Delete</button>
+                      </form>
             </a>
           </li>
         </div>
