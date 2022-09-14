@@ -6,45 +6,45 @@
 </head>
 
 <body>
+
   <div class="Header">
     <div class="gfLogo">
-      <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg" /></a>
+      <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg"></a>
     </div>
     <div class="li">
       <a class="mainIndexLi" href="/recipes/new">Add a Recipe</a>
-      <!-- </div>
+    </div>
     <div class="li">
       <a class="mainIndexLi" href="/recipes/:id/edit">Edit Your Recipe</a>
     </div> -->
-      <div class="li">
-        <a class="mainIndexLi" href="/recipes/">Log Out</a>
-      </div>
-
-      <h4>
-        Edit <%= recipe.name %>
-      </h4>
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/">Log Out</a>
     </div>
+  </div>
+  <h4>
+    Edit <%= recipe.name %>
+  </h4>
 
-    <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-      <input type="text" name="name" value="<%=recipe.name%>" />
-      <textarea name="instructions">
-        <%= recipe.instructions %>
-      </textarea>
-      <script>
-        tinymce.init({
-          selector: 'textarea',
-          plugins: 'advcode export formatpainter linkchecker autolink lists checklist powerpaste tinycomments tinymcespellchecker',
-          toolbar: 'addcomment showcomments casechange checklist export',
-          toolbar_mode: 'floating',
-          tinycomments_mode: 'embedded',
-          tinycomments_author: 'Author name',
-          width: 900,
-          height: 1800
-        });
-      </script>
-      <button><a href="/recipes">Cancel</a></button>
-      <input type="submit" value="Update Recipe" />
-    </form>
+  <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+    <input type="text" name="name" value="<%=recipe.name%>" />
+    <textarea name="instructions">
+      <%= recipe.instructions %>
+    </textarea>
+    <script>
+      tinymce.init({
+        selector: 'textarea',
+        plugins: 'advcode export formatpainter linkchecker autolink lists checklist powerpaste tinycomments tinymcespellchecker',
+        toolbar: 'addcomment showcomments casechange checklist export',
+        toolbar_mode: 'floating',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        width: 900,
+        height: 1800
+      });
+    </script>
+    <button><a href="/recipes">Cancel</a></button>
+    <input type="submit" value="Update Recipe" />
+  </form>
 
 </body>
 

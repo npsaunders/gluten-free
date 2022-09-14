@@ -6,11 +6,22 @@
 </head>
 
 <body>
-  <h1>Gluten Free Recipes - New Recipe</h1>
+  <div class="Header">
+    <div class="gfLogo">
+      <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg"></a>
+    </div>
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/new">Add a Recipe</a>
+    </div>
+
+    <div class="li">
+      <a class="mainIndexLi" href="/recipes/">Log Out</a>
+    </div>
+  </div>
+  <h4>Add Recipe</h4>
 
   <form action="/recipes" method="POST">
     <input type="text" name="name" id="recName" placeholder="Recipe Name" />
-    <!-- <textarea name="instructions" rows="4" cols="10"></textarea> -->
     <textarea name="instructions">
       Enter your recipe information. You can also drag and drop images.
     </textarea>
