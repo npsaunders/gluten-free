@@ -4,9 +4,11 @@ const Schema = mongoose.Schema;
 //MongoDB schema for a recipe
 const recipeSchema = new Schema(
   {
-    name: { type: String, required: true },
+    name: String,
+    recipeName: String,
+    email: String,
     urlPath: String,
-    instructions: { type: String, required: true },
+    instructions: String,
     googleID: String
   });
 

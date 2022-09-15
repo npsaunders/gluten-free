@@ -9,32 +9,32 @@ passport.use(new GoogleStrategy({
   callbackURL: process.env.GOOGLE_CALLBACK
 },
   function (accessToken, refreshToken, profile, cb) {
-    Student.findOne({ 'googleId': profile.id }, function (err, student) {
+    Recipe.findOne({ 'googleId': profile.id }, function (err, recipe) {
       if (err) return cb(err);
-      if (student) {
-        return cb(null, student);
+      if (recipe) {
+        return cb(null, recipe);
       } else {
-        // we have a new student via OAuth!
-        const newStudent = new Student({
+        // we have a new user via OAuth!
+        const newRecipe = new Recipe({
           name: profile.displayName,
           email: profile.emails[0].value,
           googleId: profile.id
         });
-        newStudent.save(function (err) {
+        newRecipe.save(function (err) {
           if (err) return cb(err);
-          return cb(null, newStudent);
+          return cb(null, newRecipe);
         });
       }
     });
   }
 ));
 
-passport.serializeUser(function (student, done) {
-  done(null, student.id);
+passport.serializeUser(function (recipe, done) {
+  done(null, recipe.id);
 });
 
 passport.deserializeUser(function (id, done) {
-  Student.findById(id, function (err, student) {
-    done(err, student);
+  Recipe.findById(id, function (err, recipe) {
+    done(err, recipe);
   });
 });

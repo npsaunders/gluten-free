@@ -1,14 +1,13 @@
 // DEPENDENCIES --------------
 const express = require('express');
 const app = express();
-require('dotenv').config();
-const mongoose = require('mongoose');
-const methodOverride = require('method-override');
-const recipesController = require('./controllers/recipes.js');
-
 //for use with Oauth
 const session = require('express-session');
 const passport = require('passport');
+
+require('dotenv').config();
+const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 // Database Configuration ------------------
 mongoose.connect(process.env.DATABASE_URL);
@@ -20,7 +19,10 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 //for use with Oauth
-require('./config/passport');
+require('./config/passport.js');
+
+const recipesController = require('./routes/recipes.js');
+const indexRoutes = require('./routes/index.js');
 
 // MIDDLEWARE ----------------
 // Parse incoming request and return an object. Limits were included due to crashing of 
@@ -31,47 +33,29 @@ app.use(express.static('public'));
 //Override method for use when deleting or editing a recipe
 app.use(methodOverride('_method'));
 
+app.use(express.json());
+
 //For use with Oauth
 app.use(session({
-  secret: 'GLUT3NFR33',
+  secret: 'SEIRRocks!',
   resave: false,
   saveUninitialized: true
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-//use the recipe controller
-app.use('/recipes', recipesController);
 
+app.use('/', indexRoutes);
+app.use('/', recipesController);
 
-// ROUTES --------------------
-// INDEX to main landing page 
-app.get('/', (req, res) => {
-  res.render('index.ejs', {
-    user: req.user
-  });
-});
-
-// Google OAuth login route
-app.get('/auth/google', passport.authenticate(
-  'google',
-  { scope: ['profile', 'email'] }
-));
-
-// Google OAuth callback route
-app.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect: '/students',
-    failureRedirect: '/'
-  }
-));
-
-// OAuth logout route
-app.get('/logout', function (req, res) {
-  req.logout();
-  res.redirect('/');
-});
+// view engine setup
+app.set('view engine', 'ejs');
+// // ROUTES --------------------
+// // // INDEX to main landing page 
+// app.get('/', (req, res) => {
+//   res.render('index.ejs')
+// });
 
 //Listener -------------------
 const PORT = process.env.PORT;

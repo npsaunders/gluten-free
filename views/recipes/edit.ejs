@@ -26,14 +26,14 @@
   <!-- End of Header/Nav Bar -->
 
   <h4>
-    Edit <%= recipe.name %> Recipe
+    Edit <%= recipe.recipeName %> Recipe
   </h4>
 
   <!-- Form information -->
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
 
     <!-- Recipe Name -->
-    <input type="text" name="name" value="<%=recipe.name%>" />
+    <input type="text" name="recipeName" value="<%=recipe.recipeName%>" />
     <br />
 
     <!-- URL to an Image -->
