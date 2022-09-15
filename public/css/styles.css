@@ -6,9 +6,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  /* overflow: hidden; */
 }
 
+/* Video from main landing page --------- */
 video {
   display: flex;
   object-fit: cover;
@@ -16,7 +16,9 @@ video {
   width: 100vw;
   margin-top: 10px;
 }
+/* End Video --------------------------- */
 
+/* Header & Nav Bar ------------ */
 .Header {
   display: flex;
   height: 60px;
@@ -45,8 +47,9 @@ nav {
   margin-top: 35px;
 }
 
-/* Recipe Index Page */
+/* End Nav Bar --------------- */
 
+/* Recipes ------------------- */
 .allRecipes {
   display: flex;
   flex-wrap: wrap;
@@ -63,20 +66,15 @@ nav {
   background-color: bisque;
 }
 
-/* button {
-  padding: 5px;
-  justify-content: center;
-} */
-
-.buttonText {
-  color: white;
-  font-weight: 700;
-}
-
 .idxRecipeName {
   text-align: center;
   font-weight: 700;
   height: 45px;
+}
+
+.buttonText {
+  color: white;
+  font-weight: 700;
 }
 
 .idxRecipeEditDel {
@@ -89,5 +87,3 @@ nav {
   width: 200px;
   height: 200px;
 }
-
-/* Show Page */

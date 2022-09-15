@@ -16,11 +16,15 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 
-
 // MIDDLEWARE ----------------
-app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
+// Parse incoming request and return an object. Limits were included due to crashing of 
+// rich text formatter if a large image was included and then tried to save
+app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 50000 }));
+//set the path to the public folder as static
 app.use(express.static('public'));
+//Override method for use when deleting or editing a recipe
 app.use(methodOverride('_method'));
+//use the recipe controller
 app.use('/recipes', recipesController);
 
 

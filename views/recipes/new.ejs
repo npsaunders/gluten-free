@@ -6,6 +6,7 @@
 </head>
 
 <body>
+  <!-- Header Nav Bar  -->
   <div class="Header">
     <div class="gfLogo">
       <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg"></a>
@@ -19,14 +20,22 @@
     </div>
   </div>
   <hr>
+
+
   <h4>Add Recipe</h4>
 
+  <!-- Begin Form -->
   <form action="/recipes" method="POST">
+    <!-- Recipe Name (required)  -->
     <input type="text" name="name" id="recName" placeholder="Recipe Name" />
     <br />
+
+    <!-- URL to an image (not required)  -->
     URL: <input type="url" name="urlPath" placeholder="image URL" />
-    <textarea name="instructions">
-      Enter your recipe information. You can also drag and drop images.
+
+    <!-- Begin Rich Text Formatting tool area -->
+    <textarea name="instructions"
+      placeholder="      Enter your recipe information. You can drag and drop images, edit images, print your recipe, put in checkboxes.  Explore & have fun!">
     </textarea>
     <script>
       tinymce.init({
@@ -37,11 +46,12 @@
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name',
         width: 900,
-        height: 1800,
+        height: 850,
         max_image_dimension: 50
       });
     </script>
 
+    <!-- Submit button -->
     <input type="submit" value="Add Recipe" />
     <a href="/recipes">back</a>
   </form>

@@ -4,7 +4,7 @@ const Recipe = require('../models/recipes.js');
 
 
 // ROUTES --------------------
-// INDEX - Display all recipes; apply filter, do search, etc from this page
+// INDEX - Display all recipes. Allow user to add, edit, delete or show a recipe
 recipeRoute.get('/', (req, res) => {
   Recipe.find({}, (error, foundRecipes) => {
     res.render("recipes/index.ejs", {
@@ -18,14 +18,14 @@ recipeRoute.get('/new', (req, res) => {
   res.render('recipes/new.ejs');
 });
 
-// DELETE - Delete a recipe you have submitted
+// DELETE - Delete a recipe
 recipeRoute.delete('/:id', (req, res) => {
   Recipe.findByIdAndDelete(req.params.id, () => {
     res.redirect('/recipes');
   });
 });
 
-// UPDATE - Update a recipe you have submitted and edited
+// UPDATE - Update a recipe 
 recipeRoute.put('/:id', (req, res) => {
   Recipe.findByIdAndUpdate(req.params.id, req.body, {
     new: true
@@ -43,7 +43,7 @@ recipeRoute.post('/', (req, res) => {
   });
 });
 
-// EDIT - Edit a recipe you have submitted
+// EDIT - Edit a recipe
 recipeRoute.get('/:id/edit', (req, res) => {
   Recipe.findById(req.params.id, (err, foundRecipe) => {
     res.render('recipes/edit.ejs', {
@@ -52,7 +52,7 @@ recipeRoute.get('/:id/edit', (req, res) => {
   });
 });
 
-// SHOW - Show a recipe
+// SHOW - Show a recipe selected from the Index page
 recipeRoute.get('/:id', (req, res) => {
   Recipe.findById(req.params.id, (err, foundRecipe) => {
     res.render('recipes/show.ejs', {

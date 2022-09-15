@@ -7,6 +7,7 @@
 
 <body>
 
+  <!-- Header and Nav Bar -->
   <div class="Header">
     <div class="gfLogo">
       <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg"></a>
@@ -22,14 +23,23 @@
     </div>
   </div>
   <hr>
+  <!-- End of Header/Nav Bar -->
+
   <h4>
-    Edit <%= recipe.name %>
+    Edit <%= recipe.name %> Recipe
   </h4>
 
+  <!-- Form information -->
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+
+    <!-- Recipe Name -->
     <input type="text" name="name" value="<%=recipe.name%>" />
     <br />
+
+    <!-- URL to an Image -->
     URL: <input type="url" name="urlPath" placeholder="image URL" value=<%=recipe.urlPath %> />
+
+    <!-- Begin Rich Text Format tool -->
     <textarea name="instructions">
       <%= recipe.instructions %>
     </textarea>
@@ -42,10 +52,12 @@
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name',
         width: 900,
-        height: 1800,
+        height: 850,
         max_image_dimension: 50
       });
     </script>
+
+    <!-- Cancel and Update buttons -->
     <button><a href="/recipes">Cancel</a></button>
     <input type="submit" value="Update Recipe" />
   </form>

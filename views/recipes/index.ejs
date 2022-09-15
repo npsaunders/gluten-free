@@ -6,6 +6,7 @@
 </head>
 
 <body>
+  <!-- Header & Nav bar  -->
   <div class="Header">
     <div class="gfLogo">
       <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg" /></a>
@@ -23,6 +24,8 @@
   </div>
   <hr>
   <ul>
+
+    <!-- Show all recipes on "cards" -->
     <div class="allRecipes">
       <%for (let i=0; i < recipes.length; i++) {%>
         <div class="showRecipes">
@@ -39,7 +42,7 @@
                     <% } %>
               </div>
 
-              <!-- edit -->
+              <!-- Edit and Delete buttons -->
               <div class="idxRecipeEditDel">
                 <div>
                   <button class="waves-effect waves-light btn-small"><a class="buttonText"

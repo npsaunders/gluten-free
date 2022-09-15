@@ -6,6 +6,7 @@
 </head>
 
 <body>
+  <!-- Header and Nav Bar -->
   <div class="Header">
     <div class="gfLogo">
       <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg" /></a>
@@ -24,9 +25,12 @@
     </div>
   </div>
   <hr>
+
   <h4>
     <%= recipe.name %>
   </h4>
+
+  <!-- Display recipe in Rich Text Formatting Tool -->
   <textarea>
     <%= recipe.instructions %>
   </textarea>
@@ -39,11 +43,10 @@
       tinycomments_mode: 'embedded',
       tinycomments_author: 'Author name',
       width: 900,
-      height: 1800,
+      height: 850,
       max_image_dimension: 50
     });
   </script>
-
 
 </body>
 
