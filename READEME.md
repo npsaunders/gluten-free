@@ -20,7 +20,7 @@ JavaScript must be enabled in the browser for this page to work.
 
 - GitHub Pages Live Link **[Mars Weather](https://npsaunders.github.io/Mars-Weather-App/)**
 
-- Heroku Link **[Gluten Free Recipes](https://dashboard.heroku.com/apps/gluten-free-recipes/)**
+- Heroku Link **[Gluten Free Recipes](https://gluten-free-recipes.herokuapp.com/)**
 
 ---
 
@@ -48,9 +48,7 @@ JavaScript must be enabled in the browser for this page to work.
 
 ### **Future Enhancements**
 
--
-
----
+- ***
 
 ### **References/License Info**
 
