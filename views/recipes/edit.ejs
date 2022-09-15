@@ -30,7 +30,7 @@
   </h4>
 
   <!-- Form information -->
-  <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+  <form action="/<%= recipe._id %>?_method=PUT" method="POST">
 
     <!-- Recipe Name -->
     <input type="text" name="recipeName" value="<%=recipe.recipeName%>" />
@@ -58,7 +58,7 @@
     </script>
 
     <!-- Cancel and Update buttons -->
-    <button><a href="/recipes">Cancel</a></button>
+    <button><a href="/">Cancel</a></button>
     <input type="submit" value="Update Recipe" />
   </form>
 

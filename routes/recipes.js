@@ -38,7 +38,6 @@ recipeRoute.put('/:id', (req, res) => {
 });
 
 // CREATE - Create a recipe you have submitted through the New page
-
 recipeRoute.post('/', (req, res) => {
   Recipe.create(req.body, (error, createdRecipe) => {
     res.redirect('/recipes');

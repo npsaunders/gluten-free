@@ -37,7 +37,7 @@ app.use(express.json());
 
 //For use with Oauth
 app.use(session({
-  secret: 'SEIRRocks!',
+  secret: 'GLUT3NFR33!',
   resave: false,
   saveUninitialized: true
 }));
