@@ -6,6 +6,10 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const recipesController = require('./controllers/recipes.js');
 
+//for use with Oauth
+const session = require('express-session');
+const passport = require('passport');
+
 // Database Configuration ------------------
 mongoose.connect(process.env.DATABASE_URL);
 
@@ -15,6 +19,8 @@ db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
 db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
+//for use with Oauth
+require('./config/passport');
 
 // MIDDLEWARE ----------------
 // Parse incoming request and return an object. Limits were included due to crashing of 
@@ -24,6 +30,16 @@ app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 500
 app.use(express.static('public'));
 //Override method for use when deleting or editing a recipe
 app.use(methodOverride('_method'));
+
+//For use with Oauth
+app.use(session({
+  secret: 'GLUT3NFR33',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 //use the recipe controller
 app.use('/recipes', recipesController);
 
