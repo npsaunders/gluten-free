@@ -60,6 +60,7 @@ nav {
   color: #039be5;
   display: flex;
   margin: 10px;
+  background-color: bisque;
 }
 
 /* button {
@@ -75,11 +76,18 @@ nav {
 .idxRecipeName {
   text-align: center;
   font-weight: 700;
+  height: 45px;
 }
 
 .idxRecipeEditDel {
-  /* margin-top: 13px; */
-  margin: 13px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 7px 15px;
+}
+
+.idxRecipeImg {
+  width: 200px;
+  height: 200px;
 }
 
 /* Show Page */

@@ -29,20 +29,23 @@
               </div>
               <div class="idxRecipeImg">
                 <% if(recipes[i].urlPath) {%>
-                  <img src=<%=recipes[i].urlPath %> width="200" height="200">
+                  <img class="idxRecipeImg" src=<%=recipes[i].urlPath %>>
                   <%} else {%>
-                    <img src="/imgs/No_Image_Available.jpg" width="200" height="200">
+                    <img class="idxRecipeImg" src="/imgs/No_Image_Available.jpg">
                     <% } %>
               </div>
-              <form class="center-align idxRecipeEditDel" action="/recipes/<%= recipes[i]._id %>?_method=DELETE"
-                method="POST">
-                <!-- edit -->
-                <button class="waves-effect waves-light btn-small"><a class="buttonText"
-                    href="/recipes/<%= recipes[i]._id %>/edit">Edit</a></button>
-                <!-- Delete -->
-                <button class="waves-effect waves-light btn-small buttonText" type="submit">Delete</button>
 
-              </form>
+              <!-- edit -->
+              <div class="idxRecipeEditDel">
+                <div>
+                  <button class="waves-effect waves-light btn-small"><a class="buttonText"
+                      href="/recipes/<%= recipes[i]._id %>/edit">Edit</a></button>
+                </div>
+                <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
+                  <!-- Delete -->
+                  <div><button class="waves-effect waves-light btn-small buttonText" type="submit">Delete</button></div>
+                </form>
+              </div>
             </a>
           </li>
         </div>
