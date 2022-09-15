@@ -3,12 +3,14 @@ const recipeRoute = express.Router();
 const Recipe = require('../models/recipes.js');
 
 
+
 // ROUTES --------------------
 // INDEX - Display all recipes. Allow user to add, edit, delete or show a recipe
 recipeRoute.get('/', (req, res) => {
   Recipe.find({}, (error, foundRecipes) => {
     res.render("recipes/index.ejs", {
-      recipes: foundRecipes
+      recipes: foundRecipes,
+      user: req.user
     });
   });
 });

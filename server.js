@@ -47,9 +47,31 @@ app.use('/recipes', recipesController);
 // ROUTES --------------------
 // INDEX to main landing page 
 app.get('/', (req, res) => {
-  res.render('index.ejs');
+  res.render('index.ejs', {
+    user: req.user
+  });
 });
 
+// Google OAuth login route
+app.get('/auth/google', passport.authenticate(
+  'google',
+  { scope: ['profile', 'email'] }
+));
+
+// Google OAuth callback route
+app.get('/oauth2callback', passport.authenticate(
+  'google',
+  {
+    successRedirect: '/students',
+    failureRedirect: '/'
+  }
+));
+
+// OAuth logout route
+app.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
 
 //Listener -------------------
 const PORT = process.env.PORT;
