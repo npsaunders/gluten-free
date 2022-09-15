@@ -20,7 +20,7 @@ JavaScript must be enabled in the browser for this page to work.
 
 - GitHub Pages Live Link **[Mars Weather](https://npsaunders.github.io/Mars-Weather-App/)**
 
-- Heroku Link **[Gluten Free Recipes](https://dashboard.heroku.com/apps/gluten-free/)**
+- Heroku Link **[Gluten Free Recipes](https://dashboard.heroku.com/apps/gluten-free-recipes/)**
 
 ---
 
@@ -35,7 +35,6 @@ JavaScript must be enabled in the browser for this page to work.
 - Mongoose
 - MongoDB
 - Materialize
-- AJAX
 
 ---
 
@@ -49,27 +48,7 @@ JavaScript must be enabled in the browser for this page to work.
 
 ### **Future Enhancements**
 
-- Looking to see if it's possible to create an interactive map, of the rover waypoints/sols, and let the user click the waypoint to get the weather at that location. Due to Same Origin Policy, I cannot directly interact with the iframe, of the NASA map, to get the sol based on location.
-
-[Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
-
-<a href="https://mars.nasa.gov/maps/location/?mission=MSL&site=NOW&mapLon=137.39720821380618&mapLat=-4.752126563545443&mapZoom=16&globeLon=137.3978687&globeLat=-4.663687049999997&globeZoom=13&globeCamera=0,-2441.40625,0,0,1,0&panePercents=0,100,0&on=Current Position$1.00,Waypoints$1.00,Surface View$1.00,Rover Path$1.00,Labels$1.00,Basemap$1.00,Gale Crater Map$1.00" target="_blank">Mars Interactive Map</a>
-
-- Look at carousel slide image heights to reduce "jumping" when clicking the carousel buttons.
-
----
-
-### **Other Interesting Links**
-
-[Curiosity Rover](https://mars.nasa.gov/msl/home/)
-
-[Curiosity Rover Simulator](https://eyes.nasa.gov/curiosity/)
-
-[Location of Mars satellites and rovers - interactive](https://eyes.nasa.gov/apps/mrn/index.html#/mars)
-
-[NASA-AMMOS/MMGIS (Multi-Mission Geographical Information System)](https://github.com/NASA-AMMOS/MMGIS)
-
-[NASA Mars Rover Games](https://mars.nasa.gov/gamee-rover/)
+-
 
 ---
 
