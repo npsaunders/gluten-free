@@ -11,18 +11,18 @@
       <a href="/"><img class="gfLogo" src="/imgs/gluten-free-logo.jpg"></a>
     </div>
     <div class="li">
-      <a class="mainIndexLi" href="/recipes/new">Add a Recipe</a>
+      <a class="mainIndexLi" href="/recipes">Recipes</a>
     </div>
 
     <div class="li">
       <a class="mainIndexLi" href="/recipes/">Log Out</a>
     </div>
   </div>
+  <hr>
   <h4>Add Recipe</h4>
 
   <form action="/recipes" method="POST">
     <input type="text" name="name" id="recName" placeholder="Recipe Name" />
-    Upload image from hard drive: <input type="file" name="imagePath" placeholder="image hard drive path" /><br /> or
     <br />
     URL: <input type="url" name="urlPath" placeholder="image URL" />
     <textarea name="instructions">
