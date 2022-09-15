@@ -33,7 +33,7 @@ recipeRoute.put('/:id', (req, res) => {
     new: true
   },
     (error, updatedRecipe) => {
-      res.redirect(`/recipes/${req.params.id}`);
+      res.redirect(`/${req.params.id}`);
     });
 });
 
