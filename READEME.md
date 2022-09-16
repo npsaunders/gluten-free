@@ -20,7 +20,7 @@ You must have a Google account to login.
 
 - GitHub Link **[Gluten Free Recipes](https://github.com/npsaunders/gluten-free)**
 
-- Heroku Link **[Gluten Free Recipes](https://gluten-free-recipes.herokuapp.com/)**
+- Heroku Link **[Gluten Free Recipes](https://g-f-recipes.herokuapp.com/)**
 
 ---
 
