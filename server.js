@@ -51,11 +51,7 @@ app.use('/', recipesController);
 
 // view engine setup
 app.set('view engine', 'ejs');
-// // ROUTES --------------------
-// // // INDEX to main landing page 
-// app.get('/', (req, res) => {
-//   res.render('index.ejs')
-// });
+// ROUTES --------------------
 
 //Listener -------------------
 const PORT = process.env.PORT;

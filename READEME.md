@@ -16,9 +16,9 @@ A year ago my daughter was diagnosed with celiac disease. **[Celiac disease](htt
 
 JavaScript must be enabled in the browser for this page to work.
 
-- GitHub Link **[Gluten Free Recipes](https://github.com/npsaunders/gluten-free)**
+You must have a Google account to login.
 
-- GitHub Pages Live Link **[Mars Weather](https://npsaunders.github.io/Mars-Weather-App/)**
+- GitHub Link **[Gluten Free Recipes](https://github.com/npsaunders/gluten-free)**
 
 - Heroku Link **[Gluten Free Recipes](https://gluten-free-recipes.herokuapp.com/)**
 
@@ -29,47 +29,39 @@ JavaScript must be enabled in the browser for this page to work.
 - HTML5
 - CSS3
 - JavaScript
-- EJS
 - Node.js
 - Express
+- EJS
 - Mongoose
 - MongoDB
 - Materialize
 
 ---
 
-### **Screenshots**
+### **Walk Thru Video**
 
 <br>
 <p align="center">
-<img src="./imgs/Screenshots/MarsScreenShot.gif" alt="main page" width="800"/></p>
+<img src="./public/imgs/GlutenFree-walkthru.gif" width="800"/></p>
 
 ---
 
 ### **Future Enhancements**
 
-- ***
+- **Associate login profile with user's recipe selection.**
+- **Add search/filtering on the index page.**
 
 ### **References/License Info**
 
-- **<a href="https://www.programmableweb.com/api/maas2-rest-api-v100" target="_blank">MAAS2 Mars Weather Data API</u>**
+- **<a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>**
 
-- **<a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</u>**
+- **<a href="https://www.tiny.cloud/docs-3x/extras/TinyMCE3x@License/">TinyMCE License</a>**
 
-- **<a href="https://www.nasa.gov/multimedia/guidelines/index.html" target="_blank">NASA Image Policy</u>**
-
-- **<a href="https://www.jpl.nasa.gov/jpl-image-use-policy" target="_blank">JPL/Cal-Tech Image Policy</u>**
-
-- **<a href="https://getbootstrap.com/docs/4.0/about/license/#:~:text=Bootstrap%20is%20released%20under%20the%20MIT%20license%20and%20is%20copyright%202018%20Twitter" target="_blank">Bootstrap License Policy</u>**
-
-- **<u>[Averox font license](./font/!license.txt)</u>**
-
-![StackOverflow](./imgs/StackOverflow.png)
-
-<img src="./imgs/googleLogo-sm.png" width="80">
+<img src="./public/imgs/StackOverflow.png" width="80">
 <br><br>
-<img src="./imgs/W3schools.png" width="80">
+<img src="./public/imgs/googleLogo-sm.png" width="80">
 <br><br>
-<img src="./imgs/MDN_Web_Docs-Logo.png" width="200">
+<img src="./public/imgs/W3schools.png" width="80">
 <br><br>
-<img src="./imgs/BootStrap.png" width="100">
+<img src="./public/imgs/MDN_Web_Docs-Logo.png" width="200">
+<br><br>
